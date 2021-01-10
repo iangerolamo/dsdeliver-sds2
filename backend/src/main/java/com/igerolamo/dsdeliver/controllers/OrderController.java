@@ -4,7 +4,6 @@ import com.igerolamo.dsdeliver.dto.OrderDTO;
 import com.igerolamo.dsdeliver.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -30,5 +29,11 @@ public class OrderController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
+    }
+
+    @PutMapping("/{id}/delivered")
+    public ResponseEntity<OrderDTO> setDelivered(@PathVariable Long id) {
+        OrderDTO dto = service.setDelivered(id);
+        return ResponseEntity.ok().body(dto);
     }
 }

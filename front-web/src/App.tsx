@@ -1,9 +1,12 @@
 import React from 'react';
 import GlobalStyle from './styles/global';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 const App: React.FC = () => (
   <>
-    <h1>DSdeliver</h1>
+    <Navbar />
+    <Home />
     <GlobalStyle />
   </>
 );

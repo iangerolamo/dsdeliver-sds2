@@ -1,20 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: 0;
-  }
-  body {
-    background: #E5E5E5;
-    -webkit-font-smoothing: antialiased;
-  }
-  body, input, button {
-    font-family: 'Open Sans', sans-serif;
-  }
-  button {
-    cursor: pointer;
-  }
+  :root {
+  --primary-color: #da5c5c;
+  --primary-hover-color: #a74b4b;
+  --dark-color: #263238;
+  --secondary-color: #9E9E9E;
+  --light-color: #F5F5F5;
+}
+
+html, body {
+  margin: 0;
+  padding:0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
 `;

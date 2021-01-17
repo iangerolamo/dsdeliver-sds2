@@ -6,11 +6,17 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
+// JPA é uma ferramenta de ORM
+
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    // necessário definir a chave primaria da tabela e como ela vai se comportar
+    // número que será auto incrementado pelo banco com o @GeneratedValue
+    // portanto esse comando irá instruir o JPA para ele mapear esse ID como uma chave primária no banco de dados
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +27,14 @@ public class Order implements Serializable {
     private Instant moment;
     private OrderStatus status;
 
+    // usado para implementar a tabela de associação entre os pedidos e os produtos
+    // o joinColumns é a chave estrangeira que referencia a classe em que estou no caso a tabela tb_order
     @ManyToMany
     @JoinTable(name = "tb_order_product",
         joinColumns = @JoinColumn(name = "order_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
 
+    // Considerada uma interface que faz parte do pacote “java.util” e representa grupos de elementos sem duplicatas,
+    // Ou seja, são usados quando o programador não precisar ter nenhum dado duplicado na coleção.
     private Set<Product> products = new HashSet<>();
 
     public Order() {

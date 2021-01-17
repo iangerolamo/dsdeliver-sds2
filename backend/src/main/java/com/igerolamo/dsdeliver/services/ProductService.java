@@ -10,11 +10,15 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// anotation service porque é um objeto da camada de serviço
+
 @Service
 public class ProductService {
 
     @Autowired
     private ProductRepository repository;
+
+// injeção de dependencias de componentes
 
     @Transactional(readOnly = true)
     public List<ProductDTO> findAll() {
@@ -24,5 +28,6 @@ public class ProductService {
 
 }
 
-// o uso da stream() é para aceitar preogramação funcionl de alta ordem, lambda por exemplo
+// o uso da stream() (a partir do java 8) é para aceitar programação funcionl de alta ordem, lambda por exemplo
+// a função map passa por cada elemento da lista e transforma em uma nova lista
 // o uso de collect() é para converter novamente para lista

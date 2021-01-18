@@ -1,27 +1,51 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
+import { ReactComponent as MainImage } from '../../assets/main.svg';
+
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-import { Container, Content } from './styles';
+import {
+  Container, Content, Title, Subtitle,
+} from './styles';
 
-const Home: React.FC = () => (
+const Teste: React.FC = () => (
   <>
     <Navbar />
-    <Container>
-      <Content>
-        <main>
-          <h1>
-            Faça seu pedido que entregamos pra você!!!
-          </h1>
-          <h3>
-            Escolha o seu pedido e em poucos minutos levaremos na sua porta
-          </h3>
-          <a href="/orders">Fazer pedido</a>
-        </main>
+    <Container className="home-container">
+      <Content className="home-content">
+        <div className="home-actions">
+          <Title className="home-title">
+            Faça seu pedido
+            {' '}
+            <br />
+            {' '}
+            que entregamos
+            {' '}
+            <br />
+            {' '}
+            pra você!!!
+          </Title>
+          <Subtitle className="home-subtitle">
+            Escolha o seu pedido e em poucos minutos
+            {' '}
+            <br />
+            {' '}
+            levaremoss na sua porta
+          </Subtitle>
+          <Link to="/orders" className="home-btn-order">
+            FAZER PEDIDO
+          </Link>
+        </div>
+        <div className="home-image">
+          <MainImage />
+        </div>
       </Content>
     </Container>
     <Footer />
   </>
+
 );
 
-export default Home;
+export default Teste;

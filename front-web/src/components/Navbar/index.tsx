@@ -5,7 +5,7 @@ import { ReactComponent as Logo } from '../../assets/logo.svg';
 const Navbar: React.FC = () => (
   <Nav>
     <Logo />
-    <a href="home">DS Delivery</a>
+    <a href="/">DS Delivery</a>
   </Nav>
 
 );

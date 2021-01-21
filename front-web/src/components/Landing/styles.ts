@@ -87,3 +87,18 @@ export const Subtitle = styled.h3`
     text-align: center;
   }
 `;
+
+export const Image = styled.div`
+
+  svg {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+
+    svg {
+      width: 80%;
+    }
+  }
+`;

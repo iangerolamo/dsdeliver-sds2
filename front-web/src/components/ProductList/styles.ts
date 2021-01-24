@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background: #F5F5F5;
 `;
 

@@ -12,7 +12,10 @@ const ProductList: React.FC<Props> = ({ products }: Props) => (
     <Items className="orders-list-content">
 
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard
+          key={product.id}
+          product={product}
+        />
       ))}
 
     </Items>

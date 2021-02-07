@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar';
 import StepsHeader from '../../components/StepsHeader';
 import ProductList from '../../components/ProductList';
+import OrderLocation from '../../components/OrderLocation';
 import Footer from '../../components/Footer';
 import { Product } from './types';
 import { fetchProducts } from '../../services/api';
@@ -25,6 +26,7 @@ const Orders: React.FC = () => {
       <Navbar />
       <StepsHeader />
       <ProductList products={products} />
+      <OrderLocation />
       <Footer />
     </>
 

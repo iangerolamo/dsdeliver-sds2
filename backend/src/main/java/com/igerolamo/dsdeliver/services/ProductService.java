@@ -15,6 +15,11 @@ import java.util.stream.Collectors;
 @Service
 public class ProductService {
 
+
+//    A anotação @ Autowired fornece controle sobre onde e como a ligação entre os beans deve ser realizada.
+//    Pode ser usado para em métodos setter, no construtor, em uma propriedade ou métodos com nomes arbitrários
+//    e / ou vários argumentos.
+
     @Autowired
     private ProductRepository repository;
 
